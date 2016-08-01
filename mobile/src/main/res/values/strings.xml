@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Smart Parker</string>
+
+    <string name="title_activity_splash">SplashActivity</string>
+    <string name="location_permission_denied">Location permission denied</string>
+    <string name="location_enable_message">Do you want to enable Location</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="hint">Search</string>
+    <string name="speech_prompt">Say Something</string>
+    <string name="speech_not_supported">speech to text doesn\'t seems supported</string>
+    <string name="world_street_map">https://www.arcgis.com/home/item.html?id=3b93337983e9436f8db950e38a8629af</string>
+    <string name="world_street">https://www.arcgis.com/home/webmap/viewer.html?webmap=8bf7167d20924cbf8e25e7b11c7c502c</string>
+
+</resources>

@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "630181505170",
+    "firebase_url": "https://smart-parker.firebaseio.com",
+    "project_id": "smart-parker",
+    "storage_bucket": "smart-parker.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:630181505170:android:745c386577c4358c",
+        "android_client_info": {
+          "package_name": "com.esri.arcgisruntime.smartparker"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "630181505170-rdeq5a20fjm1tojtiupeuv3ahq0cfi3g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCd0c3uXCox0V_Ut5pnxwSbZIRHGJGT17w"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

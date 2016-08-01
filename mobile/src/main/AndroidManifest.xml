@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.esri.arcgisruntime.smartparker">
+
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <meta-data
+            android:name="com.google.android.gms.car.application"
+            android:resource="@xml/automotive_app_desc" />
+        <activity android:name=".MainActivity">
+
+        </activity>
+
+
+
+        <service android:name=".MyMessagingService" />
+
+        <receiver android:name=".MessageReadReceiver">
+            <intent-filter>
+                <action android:name="com.esri.arcgisruntime.smartparker.ACTION_MESSAGE_READ" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name=".MessageReplyReceiver">
+            <intent-filter>
+                <action android:name="com.esri.arcgisruntime.smartparker.ACTION_MESSAGE_REPLY" />
+            </intent-filter>
+        </receiver>
+
+        <activity
+            android:name=".SplashActivity"
+            android:theme="@style/SplashTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <service
+            android:name=".AutoConnectService"
+            android:exported="false" />
+        <service
+            android:name=".CarConnectService"
+            android:enabled="true"
+            android:exported="true"
+            android:permission="com.google.android.gms.permission.CAR">
+            <intent-filter>
+                <action android:name="com.google.android.gms.car.media.STATUS" />
+            </intent-filter>
+        </service>
+
+        <receiver
+            android:name=".CarReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.google.android.gms.car.media.STATUS" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.hardware.usb.action.USB_ACCESSORY_ATTACHED" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name=".CarConnectReceiver"
+            android:enabled="true"
+            android:exported="true"
+            android:permission="com.google.android.gms.permission.CAR">
+            <intent-filter>
+                <action android:name="com.google.android.gms.car.media.STATUS" />
+            </intent-filter>
+        </receiver>
+
+        <service
+            android:name=".MyFirebaseMessagingService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
+
+        <service
+            android:name=".MyFirebaseInstanceIDService">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
+            </intent-filter>
+        </service>
+        <receiver
+            android:name=".MyMessageHeardReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.example.android.basicnotifications.MY_ACTION_MESSAGE_HEARD"/>
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name=".MyMessageReplyReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.example.android.basicnotifications.MY_ACTION_MESSAGE_REPLY"/>
+            </intent-filter>
+        </receiver>
+    </application>
+
+</manifest>
